@@ -68,7 +68,7 @@ We use Spark NLP Yake Keyword Extraction for extracting the keyword from the pat
 
 ## Project Architecture
 
-![architecture.png](architecture.png)- [Patent Analytics Data Pipeline](#patent-analytics-data-pipeline)
+![architecture.png](architecture.png)
 
 These are the overview of the steps involved in the data pipeline:
 
