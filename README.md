@@ -30,10 +30,9 @@ Some analysis that could be done via the dashboard are:
 - Number of patents per year
 - Top keywords from their patents over the year
 
-This is the resultant dashboard built using the data:
-https://user-images.githubusercontent.com/33612460/190854486-b6a45464-a2de-48b1-bc1c-605800ae2fa0.mp4
+This is the dashboard we built using AWS QuickSight:
 
-
+![dashboard_demo2](https://user-images.githubusercontent.com/33612460/190854889-15b905cd-e409-457d-9de5-9e42b6f1b8aa.gif)
 
 
 ## Table of Contents
