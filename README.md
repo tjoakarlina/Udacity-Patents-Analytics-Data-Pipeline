@@ -104,38 +104,7 @@ root/
 |   |   |       countryInfo.txt
 |   |   |       shapes_simplified_low.json
 |   |   |
-|   |   |---scripts # Pyspark scripts to be submitted to EMR. These are copied from the spark  folder
-|   |   |   |---configs
-|   |   |   |       etl_config.json
-|   |   |   |
-|   |   |   |---dependencies
-|   |   |   |       packages.zip
-|   |   |   |
-|   |   |   |---jobs
-|   |   |       |---Data_Cleaning
-|   |   |       |       cleaning_assignee_job.py
-|   |   |       |       cleaning_country_shapes_job.py
-|   |   |       |       cleaning_inventor_job.py
-|   |   |       |       cleaning_location_job.py
-|   |   |       |       cleaning_patent_assignee_job.py
-|   |   |       |       cleaning_patent_inventor_job.py
-|   |   |       |       cleaning_patent_job.py
-|   |   |       |       cleaning_wipo_field_job.py
-|   |   |       |       cleaning_wipo_job.py
-|   |   |       |
-|   |   |       |---ETL
-|   |   |       |       dates_etl_job.py
-|   |   |       |       details_etl_job.py
-|   |   |       |       intermediary_patent_etl_job.py
-|   |   |       |       locations_etl_job.py
-|   |   |       |       owners_etl_job.py
-|   |   |       |       patents_etl_job.py
-|   |   |       |       patent_keywords_etl_job.py
-|   |   |       |       wipo_classifications_etl_job.py
-|   |   |       |
-|   |   |       |---Keyword_Extraction
-|   |   |       |       rank_keyword_job.py
-|   |   |       |       yake_keyword_extraction_job.py
+|   |   |---scripts # Pyspark scripts to be submitted to EMR. These are to be copied from the spark  folder
 |   |   |---sql
 |   |   |       drop_create_tables.sql
 |   |   |

@@ -42,3 +42,7 @@ __pycache__/
 
 # config
 etl_config.json
+
+# airflow pyspark jobs
+/airflow/dags/scripts/dependencies
+/airflow/dags/scripts/jobs
