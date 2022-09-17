@@ -30,6 +30,12 @@ Some analysis that could be done via the dashboard are:
 - Number of patents per year
 - Top keywords from their patents over the year
 
+This is the resultant dashboard built using the data:
+https://user-images.githubusercontent.com/33612460/190854486-b6a45464-a2de-48b1-bc1c-605800ae2fa0.mp4
+
+
+
+
 ## Table of Contents
 
 - [Introduction](#introduction)
