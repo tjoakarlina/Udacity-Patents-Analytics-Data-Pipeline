@@ -1,0 +1,44 @@
+.idea
+*/__pycache__/*
+*?metastore_db/*
+spark_warehouse
+.mypy_cache/
+.venv
+venv/*
+loaded_data/*
+derby.log
+.DS_Store
+
+
+# Airflow configuration
+airflow.cfg
+unittests.cfg
+airflow_login.py
+dbinit.py
+initdb.py
+secrets.py
+
+# Airflow sqlite databases
+airflow.db
+unittests.db
+
+# Airflow temporary artifacts
+airflow/git_version
+airflow/www/static/coverage/
+airflow/www/*.log
+
+logs
+airflow-webserver.pid
+standalone_admin_password.txt
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# config
+etl_config.json
