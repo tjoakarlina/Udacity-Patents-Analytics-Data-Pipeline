@@ -225,21 +225,21 @@ with DAG(
                 s3_key=f"{CLEANED_FILE_S3_KEY}{file}",
             )
 
-    # keyword_extraction_emr_job = build_emr_task(
-    #     dag=dag,
-    #     task_group_id="keyword_extraction_emr_task",
-    #     aws_connection_id=AWS_CONNECTION_ID,
-    #     s3_bucket_name=S3_BUCKET_NAME,
-    #     local_dependencies_path=LOCAL_DEPENDENCIES_PATH,
-    #     dependencies_s3_key=DEPENDENCIES_S3_KEY,
-    #     local_configs_path=LOCAL_CONFIGS_PATH,
-    #     configs_s3_key=CONFIGS_S3_KEY,
-    #     scripts_by_order=KEYWORD_EXTRACTION_SCRIPTS_BY_ORDER,
-    #     local_scripts_path=LOCAL_KEYWORD_EXTRACTION_SCRIPTS_PATH,
-    #     scripts_s3_key=KEYWORD_EXTRACTION_SCRIPTS_S3_KEY,
-    #     spark_job_flow_overrides=JOB_FLOW_OVERRIDES_NLP_SPARK,
-    #     emr_connection_id=EMR_CONNECTION_ID,
-    # )
+    keyword_extraction_emr_job = build_emr_task(
+        dag=dag,
+        task_group_id="keyword_extraction_emr_task",
+        aws_connection_id=AWS_CONNECTION_ID,
+        s3_bucket_name=S3_BUCKET_NAME,
+        local_dependencies_path=LOCAL_DEPENDENCIES_PATH,
+        dependencies_s3_key=DEPENDENCIES_S3_KEY,
+        local_configs_path=LOCAL_CONFIGS_PATH,
+        configs_s3_key=CONFIGS_S3_KEY,
+        scripts_by_order=KEYWORD_EXTRACTION_SCRIPTS_BY_ORDER,
+        local_scripts_path=LOCAL_KEYWORD_EXTRACTION_SCRIPTS_PATH,
+        scripts_s3_key=KEYWORD_EXTRACTION_SCRIPTS_S3_KEY,
+        spark_job_flow_overrides=JOB_FLOW_OVERRIDES_NLP_SPARK,
+        emr_connection_id=EMR_CONNECTION_ID,
+    )
 
     with TaskGroup(group_id="check_keyword_data_exists") as check_keyword_data_exist:
         for file in KEYWORD_FILES:
@@ -409,14 +409,13 @@ with DAG(
 
     end_operator = EmptyOperator(task_id="End_execution")
 
-
     (
         start_operator
         >> [upload_local_raw_data_to_S3, download_raw_patent_data_to_s3]
         >> check_raw_data_exist
         >> cleaning_emr_job
         >> check_cleaned_data_exist
-        # >> keyword_extraction_emr_job
+        >> keyword_extraction_emr_job
         >> check_keyword_data_exist
         >> etl_emr_job
         >> [check_tables_count_group, check_tables_data_quality_group]
